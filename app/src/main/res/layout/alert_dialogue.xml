@@ -1,0 +1,378 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="25sp">-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            >-->
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/imgFirst"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="100dp"-->
+        <!--                android:background="@color/app_color"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/ic_add_photo"-->
+        <!--                />-->
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/imgSecond"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="100dp"-->
+        <!--                android:layout_marginStart="10dp"-->
+        <!--                android:layout_marginLeft="10dp"-->
+        <!--                android:background="@color/app_color_greyish"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imgFirst"-->
+        <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            </ImageButton>-->
+
+        <!--            <ImageButton-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="100dp"-->
+        <!--                android:layout_marginStart="10dp"-->
+        <!--                android:layout_marginLeft="10dp"-->
+        <!--                android:background="@color/app_color"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imgSecond"-->
+        <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            </ImageButton>-->
+
+
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center">-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/relmain1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center">-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/relLayout1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButton"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/ic_add_photo"-->
+<!--                    android:backgroundTint="@color/app_color" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButton"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/relLayout2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left"-->
+<!--                android:layout_toRightOf="@+id/relLayout1">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButton2"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/ic_add_photo"-->
+<!--                    android:backgroundTint="@color/app_color" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButton2"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/relLayout3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left"-->
+<!--                android:layout_toRightOf="@id/relLayout2">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButton3"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/button_border"-->
+<!--                    android:backgroundTint="@color/app_color"-->
+<!--                    android:src="@drawable/ic_add_photo"-->
+
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButton3"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+<!--            </RelativeLayout>-->
+
+
+<!--            </RelativeLayout>-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/alertText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_top"-->
+<!--                android:text="@string/equipment"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/textsize"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_below="@id/relmain1"/>-->
+
+<!--            <View-->
+<!--                android:id="@+id/myViewAlert"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_below="@+id/alertText"-->
+<!--                android:layout_marginTop="@dimen/margin_top"-->
+<!--                android:background="@color/black" />-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_below="@+id/myViewAlert"-->
+<!--            android:layout_marginTop="@dimen/margin_top">-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/belowrellayout1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left"-->
+<!--                >-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButtonInside"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/ic_add_photo"-->
+<!--                    android:backgroundTint="@color/app_color" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButtonInside"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/belowrellayout2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left"-->
+<!--                android:layout_toRightOf="@+id/belowrellayout1">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButtonInside2"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/ic_add_photo"-->
+<!--                    android:backgroundTint="@color/app_color" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButtonInside2"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/belowrellayout3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="@dimen/margin_left"-->
+<!--                android:layout_toRightOf="@id/belowrellayout2">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/outlinedButtonInside3"-->
+<!--                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:background="@drawable/button_border"-->
+<!--                    android:backgroundTint="@color/app_color"-->
+<!--                    android:src="@drawable/ic_add_photo"-->
+
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/outlinedButtonInside3"-->
+<!--                    android:gravity="center"-->
+<!--                    android:lines="2"-->
+<!--                    android:text="FARM \n EQUIPMENT">-->
+
+<!--                </TextView>-->
+
+
+<!--            </RelativeLayout>-->
+<!--        </RelativeLayout>-->
+
+
+            <GridView
+                android:id="@+id/simpleGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:layout_marginTop="@dimen/margin_top"
+                android:gravity="center"
+                android:columnWidth="70dp"
+                android:stretchMode="columnWidth"
+                android:scrollbars="horizontal"/>
+
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="vertical"-->
+            <!--        >-->
+
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal"-->
+            <!--        android:gravity="center">-->
+            <!--        <Button-->
+            <!--            android:layout_width="100dp"-->
+            <!--            android:layout_height="100dp"-->
+            <!--            >-->
+
+            <!--        </Button>-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="100dp"-->
+            <!--            android:layout_height="100dp"-->
+            <!--            >-->
+
+            <!--        </Button>-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="100dp"-->
+            <!--            android:layout_height="100dp"-->
+            <!--            >-->
+
+            <!--        </Button>-->
+            <!--    </LinearLayout>-->
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:orientation="horizontal"-->
+            <!--            android:gravity="center">-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="FARM \n EQUIPMENT">-->
+
+            <!--            </TextView>-->
+
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="FARM \n EQUIPMENT">-->
+
+            <!--            </TextView>-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="FARM \n EQUIPMENT"-->
+            <!--                >-->
+
+            <!--            </TextView>-->
+            <!--        </LinearLayout>-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/myserviceText"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/margin_left"-->
+            <!--                android:layout_marginLeft="@dimen/margin_left"-->
+            <!--                android:text="@string/equipment"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/textsize"-->
+            <!--                android:textStyle="bold" />-->
+
+            <!--            &lt;!&ndash;            </RelativeLayout>&ndash;&gt;-->
+
+            <!--            <View-->
+            <!--                android:id="@+id/myView"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:layout_below="@+id/relativeEquipment"-->
+            <!--                android:layout_marginTop="@dimen/margin_top"-->
+            <!--                android:background="@color/black" />-->
+            <!--            </LinearLayout>-->
+            <!--    </LinearLayout>-->
+
+<!--        </RelativeLayout>-->
+
+<!--    </ScrollView>-->
+</RelativeLayout>

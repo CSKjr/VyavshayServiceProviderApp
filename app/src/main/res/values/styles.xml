@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Divider">
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/app_color</item>
+    </style>
+
+    <style name="Divider_invisible">
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@android:color/holo_blue_dark</item>
+        <item name="colorPrimary">@android:color/darker_gray</item>
+        <item name="android:textColorPrimary">@color/app_color</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/app_color</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/app_color_greyish</item>
+    </style>
+</resources>

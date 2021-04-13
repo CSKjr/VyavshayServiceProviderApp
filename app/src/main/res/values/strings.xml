@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">VyavshayServiceProviderApp</string>
+    <string name="myservice">MY SERVICE</string>
+    <string name="equipment">EQUIPMENT DETAILS</string>
+    <string name="registration_number">Registration Number</string>
+    <string name="power">Power</string>
+    <string name="wheel_drive">Wheel Drive</string>
+    <string name="equipment_name">Equipment Name</string>
+    <string name="name_service_executor">Name</string>
+    <string name="mobile_number_service_executor">Mobile Number</string>
+    <string name="proof_service_executor">Adhaar Number / Driving License</string>
+    <string name="service_executor_details">SERVICE EXECUTOR DETAILS</string>
+    <string name="price">PRICE CONFIGURATION</string>
+    <string name="availability">AVAILABILITY CALENDAR</string>
+    <string name="save">SAVE</string>
+    <string name="add_more">ADD MORE</string>
+    <string name="on_season">ON SEASON</string>
+    <string name="before_7_days">BEFORE \n 7 days</string>
+    <string name="within_7_days">WITHIN \n 7 days</string>
+    <string name="off_season">OFF SEASON</string>
+    <string name="hourly">HOURLY</string>
+    <string name="service_details">SERVICE DETAILS</string>
+
+    <!--    <string-array name="services_array">-->
+<!--        <item>Tractor</item>-->
+<!--        <item>Pumpset</item>-->
+<!--        <item>Tractor Driver</item>-->
+<!--    </string-array>-->
+
+</resources>
