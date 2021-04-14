@@ -12,5 +12,14 @@
     <color name="grey">#E7E8E6</color>
     <color name="app_color_greyish">#57B9FF8D</color>
 
+        <color name="appcolor">#72BE44</color>
+        <color name="appskyblue">#0088FF</color>
+        <color name="appbrown">#454343</color>
+        <color name="appgrey">#BDBDBD</color>
+        <color name="appheading">#333333</color>
+        <color name="applitegrey">#F4F4F4</color>
+        <color name="appcancelColour">#FF6760</color>
+        <color name="litegreenbg">#E1EFD0</color>
+
 
 </resources>

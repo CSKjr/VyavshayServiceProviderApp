@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addNewServiceslinearlayout"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginBottom="50dp"
+    android:background="@drawable/square_outline_grey"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/addNewServicesTickMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_check_circle_24"
+        android:visibility="invisible">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/addNewServicesimageview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/addNewServicesTickMark"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:src="@drawable/ic_tractor">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/addNewServicestextview"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/addNewServicesimageview"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="2dp"
+        android:gravity="bottom|center_horizontal"
+        android:text="Self Propeelled Reaper"
+        android:textAlignment="center"
+        android:textSize="12sp">
+
+    </TextView>
+
+</RelativeLayout>

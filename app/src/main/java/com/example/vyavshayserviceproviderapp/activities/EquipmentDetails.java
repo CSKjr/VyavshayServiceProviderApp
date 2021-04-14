@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
@@ -21,18 +24,24 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.vyavshayserviceproviderapp.R;
+import com.example.vyavshayserviceproviderapp.adapters.GridViewAddServicesAdapter;
 import com.example.vyavshayserviceproviderapp.adapters.MyGridAdapter;
+import com.example.vyavshayserviceproviderapp.pojo.AddServiceModel;
+import com.example.vyavshayserviceproviderapp.pojo.AppResourceModel;
 import com.example.vyavshayserviceproviderapp.pojo.ItemGrid;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class EquipmentDetails extends AppCompatActivity {
 
@@ -40,6 +49,19 @@ public class EquipmentDetails extends AppCompatActivity {
     CalendarView calendarView;
     private Button addMoreBtn;
     private TextView eReminderTime;
+
+    List<String> list = new ArrayList<String>();
+    private RecyclerView recyclerViewSelectedItems;
+    // add services selected equipments
+    List<Integer> selectItems = new ArrayList<>();
+
+    // private int[] imagelist = new int[15];
+    List<Integer> imagelist = new ArrayList<Integer>();
+    List<AddServiceModel> addServiceModels = new ArrayList<>();
+    //
+    private AppResourceModel appResourceModel = new AppResourceModel();
+    List<AppResourceModel.AllResource> allResources = appResourceModel.getMlist();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,98 +129,10 @@ public class EquipmentDetails extends AppCompatActivity {
 
     private View.OnClickListener clicked = v -> {
         if(v.getId() == R.id.addMoreBtn) {
-
-//                    // Create custom dialog object
-//                    final Dialog dialog = new Dialog(EquipmentDetails.this);
-//                    // Include dialog.xml file
-//                    dialog.setContentView(R.layout.dialog);
-//                    // Set dialog title
-//                    dialog.setTitle("Custom Dialog");
-//
-//                    // set values for custom dialog components - text, image and button
-//                    TextView text = (TextView) dialog.findViewById(R.id.textDialog);
-//                    text.setText("Custom dialog Android example.");
-//                    ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
-//                    image.setImageResource(R.drawable.image0);
-
-//                    dialog.show();
-
-//            Calendar mcurrentTime = Calendar.getInstance();
-//            int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-//            int minute = mcurrentTime.get(Calendar.MINUTE);
-//            TimePickerDialog mTimePicker;
-//            mTimePicker = new TimePickerDialog(EquipmentDetails.this, new TimePickerDialog.OnTimeSetListener() {
-//                @Override
-//                public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-//                    eReminderTime.setText( selectedHour + ":" + selectedMinute);
-//                }
-//            }, hour, minute, true);//Yes 24 hour time
-//            mTimePicker.setTitle("Select Time");
-//            mTimePicker.show();
-            LayoutInflater layoutInflater = LayoutInflater.from(this);
-            View promptView = layoutInflater.inflate(R.layout.alert_dialogue, null);
-            final AlertDialog.Builder alertD = new AlertDialog.Builder(this);
-            alertD.setTitle("SELECT SERVICE CATEGORY");
-            alertD.setView(promptView);
-            alertD.show();
-
-            ArrayList birdList=new ArrayList<>();
-            GridView simpleList = (GridView) promptView.findViewById(R.id.simpleGridView);
-            birdList.add(new ItemGrid("Bird 1",R.drawable.ic_add_photo));
-            birdList.add(new ItemGrid("Bird 2",R.drawable.ic_add_photo));
-            birdList.add(new ItemGrid("Bird 3",R.drawable.ic_add_photo));
-            birdList.add(new ItemGrid("Bird 4",R.drawable.ic_add_photo));
-            birdList.add(new ItemGrid("Bird 5",R.drawable.ic_add_photo));
-            birdList.add(new ItemGrid("Bird 6",R.drawable.ic_add_photo));
-
-
-            MyGridAdapter myAdapter=new MyGridAdapter(this,R.layout.grid_view_items,birdList);
-            simpleList.setAdapter(myAdapter);
+            openServicesDialog();
 
 
 //            ImageButton facebook_button = (ImageButton)promptView.findViewById(R.id.imgFirst);
-//            ImageButton twitter_button = (ImageButton)promptView.findViewById(R.id.imgSecond);
-//            ImageButton intagram_button = (ImageButton)promptView.findViewById(R.id.instagram_share_button);
-//            ImageButton messanger_button = (ImageButton)promptView.findViewById(R.id.messanger_share_button);
-//            ImageButton viber_button = (ImageButton)promptView.findViewById(R.id.viber_share_button);
-//            ImageButton whatsapp_button = (ImageButton)promptView.findViewById(R.id.whatsapp_share_button);
-
-//            facebook_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-//            twitter_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-////                    shareTwitter(v, bitmap);//just a sample of what I want to do
-//                }
-//            });
-//            intagram_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-//            messanger_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-//            viber_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-//            whatsapp_button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
 
 
             Toast.makeText(getApplicationContext(),"Save is clicked",Toast.LENGTH_LONG).show();
@@ -252,4 +186,72 @@ public class EquipmentDetails extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void openServicesDialog() {
+        GridView gridView = new GridView(getApplicationContext());
+
+        List<Integer> mList = new ArrayList<Integer>();
+        for (int i = 1; i < 106; i++) {
+            mList.add(i);
+        }
+
+        //gridView.setAdapter(new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, mThumbIds));
+        gridView.setAdapter(new GridViewAddServicesAdapter(getApplicationContext()));
+        gridView.setNumColumns(3);
+        gridView.setVerticalSpacing(30);
+        gridView.setHorizontalSpacing(20);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // do something here
+                ImageView imageView = view.findViewById(R.id.addNewServicesimageview);
+                ImageView tickmark = view.findViewById(R.id.addNewServicesTickMark);
+                RelativeLayout relativeLayout = view.findViewById(R.id.addNewServiceslinearlayout);
+
+                if (!selectItems.contains(position)) {
+                    // new item has been selected
+                    selectItems.add(position);
+                    tickmark.setVisibility(View.VISIBLE);
+                    relativeLayout.setBackground(AppCompatResources.getDrawable(getApplicationContext(), R.drawable.square_outline_green));
+                    // add image and its name to list<model>
+
+                    addServiceModels.add(new AddServiceModel(allResources.get(position).getInteger(), allResources.get(position).getString(), 1));
+                } else {
+                    // un selecting the item
+
+                    selectItems.remove(Integer.valueOf(position));
+                    tickmark.setVisibility(View.INVISIBLE);
+                    if (addServiceModels.contains(new AddServiceModel(allResources.get(position).getInteger(), allResources.get(position).getString(), 1))) {
+                        addServiceModels.remove(new AddServiceModel(allResources.get(position).getInteger(), allResources.get(position).getString(), 1));
+                    }
+
+                    relativeLayout.setBackground(AppCompatResources.getDrawable(getApplicationContext(), R.drawable.square_outline_grey));
+                    // imageView.setImageResource(android.R.color.transparent);
+                }
+
+
+            }
+        });
+
+        // Set grid view to alertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(gridView);
+        builder.setPositiveButton("DONE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent i = new Intent(EquipmentDetails.this, ListSelectedServiceFromAlert.class);
+                startActivity(i);
+            }
+        });
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setTitle("Add Services");
+        builder.show();
+    }
+
 }
