@@ -1,41 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/addNewServiceslinearlayout"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
-    android:layout_marginStart="2dp"
-    android:layout_marginLeft="2dp"
-    android:layout_marginBottom="50dp"
-    android:background="@drawable/square_outline_grey"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <ImageView
-        android:id="@+id/addNewServicesTickMark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_check_circle_24"
-        android:visibility="invisible">
 
-    </ImageView>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:id="@+id/linearSelectingSerivceType">-->
+<!--        -->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/linearSelectingSerivceType"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/farmEquip"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@drawable/square_outline_grey"-->
+<!--            android:padding="15dp"-->
+<!--            android:src="@drawable/ic_tractor"-->
+<!--            android:layout_weight="1"-->
+<!--            >-->
+
+<!--        </ImageView>-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/farmEquipText"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@id/farmEquip"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_margin="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="bottom|start"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Self Propeelled \n Reaper"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="12sp">&ndash;&gt;-->
+<!--&lt;!&ndash;        </TextView>&ndash;&gt;-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/utilServ"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@drawable/square_outline_grey"-->
+<!--            android:padding="15dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+
+<!--            android:src="@drawable/ic_tractor"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="10dp">-->
+
+<!--        </ImageView>-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@+id/utilServ"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="12sp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Self Propeelled \n Reaper"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center_horizontal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_toLeftOf="@+id/utilServ">&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;        </TextView>&ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/supportServ"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@drawable/square_outline_grey"-->
+<!--            android:padding="15dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:src="@drawable/ic_tractor"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="10dp">-->
+
+<!--        </ImageView>-->
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:id="@+id/myViewAlert"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_below="@+id/linearSelectingSerivceType"-->
+<!--        android:layout_marginTop="@dimen/margin_top"-->
+<!--        android:background="@color/black" />-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/myViewAlert">-->
 
     <ImageView
         android:id="@+id/addNewServicesimageview"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/addNewServicesTickMark"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:src="@drawable/ic_tractor">
+        android:background="@drawable/square_outline_grey"
+        android:padding="10dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:src="@drawable/ic_tractor"
+       >
 
     </ImageView>
 
     <TextView
         android:id="@+id/addNewServicestextview"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/addNewServicesimageview"
-        android:layout_alignParentBottom="true"
         android:layout_margin="2dp"
         android:gravity="bottom|center_horizontal"
         android:text="Self Propeelled Reaper"
@@ -43,5 +122,7 @@
         android:textSize="12sp">
 
     </TextView>
+
+<!--    </RelativeLayout>-->
 
 </RelativeLayout>

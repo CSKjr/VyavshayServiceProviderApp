@@ -13,54 +13,25 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vyavshayserviceproviderapp.R;
+import com.example.vyavshayserviceproviderapp.pojo.AppResourceModel;
 import com.example.vyavshayserviceproviderapp.pojo.TestPojo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MovieVH> {
-//    private final int[] picslist;
-//
-//    public RecyclerViewAdapter(int[] imageList) {
-//
-//        this.picslist = imageList;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        View itemView = LayoutInflater.from(parent.getContext())
-//                .inflate(R.layout.list_service_details, parent, false);
-//
-//        return new MyViewHolder(itemView);
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//        holder.imageView.setImageResource(picslist[position]);
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//
-//        return picslist.length;
-//    }
-//
-//    public static class MyViewHolder extends RecyclerView.ViewHolder {
-//        public ImageView imageView;
-//
-//        public MyViewHolder(View view) {
-//            super(view);
-//            imageView = (ImageView) view.findViewById(R.id.recyclerviewitem);
-//
-//        }
-//    }
+public class RecyclerViewAdapterTest extends RecyclerView.Adapter<RecyclerViewAdapterTest.MovieVH> {
+
+//    List<TestPojo> movieList;
+
+    private List<AppResourceModel.AllResource> mlist;
 
 
-    List<TestPojo> movieList;
+//    private AppResourceModel appResourceModel = new AppResourceModel();
+//    List<AppResourceModel.AllResource> allResources = appResourceModel.getMlist();
 
-    public RecyclerViewAdapter(List<TestPojo> movieList) {
-        this.movieList = movieList;
+    public RecyclerViewAdapterTest(List<AppResourceModel.AllResource> mlist) {
+        this.mlist = mlist;
     }
 
     @NonNull
@@ -73,20 +44,37 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MovieVH holder, int position) {
 
-        TestPojo movie = movieList.get(position);
+//        AppResourceModel.AllResource movie = allResources.get(position);
 //        holder.titleTextView.setText(movie.getTitle());
 //        holder.yearTextView.setText(movie.getYear());
 //        holder.ratingTextView.setText(movie.getRating());
 //        holder.plotTextView.setText(movie.getPlot());
 
-        boolean isExpanded = movie.isExpanded();
-        holder.expandableLayout.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+        List<AppResourceModel.AllResource> nlist = new ArrayList<>();
+        nlist.clear();
+        for (AppResourceModel.AllResource list : mlist) {
+            if (list.isItemselected()) {
+                nlist.add(list);
+            }
+        }
 
+            boolean isExpanded = nlist.get(position).isExpanded();
+            holder.expandableLayout.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
     }
 
     @Override
     public int getItemCount() {
-        return movieList.size();
+
+        int a = 0;
+        for (AppResourceModel.AllResource list : mlist) {
+            if (list.isItemselected()) {
+                a++;
+            }
+
+
+        }
+        return a;
+//        return movieList.size();
     }
 
     class MovieVH extends RecyclerView.ViewHolder {
@@ -94,7 +82,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private static final String TAG = "MovieVH";
 
         RelativeLayout expandableLayout;
-//        TextView titleTextView, yearTextView, ratingTextView, plotTextView;
+        //        TextView titleTextView, yearTextView, ratingTextView, plotTextView;
         LinearLayout titleTextView;
 
         public MovieVH(@NonNull final View itemView) {
@@ -111,7 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 @Override
                 public void onClick(View view) {
 
-                    TestPojo movie = movieList.get(getAdapterPosition());
+                    AppResourceModel.AllResource movie = mlist.get(getAdapterPosition());
                     movie.setExpanded(!movie.isExpanded());
                     notifyItemChanged(getAdapterPosition());
 

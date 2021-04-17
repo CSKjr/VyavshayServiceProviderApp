@@ -252,6 +252,7 @@
                         android:layout_marginLeft="@dimen/margin_left"
                         android:layout_marginTop="@dimen/margin_top"
                         android:background="@drawable/dashed_border"
+                        android:visibility="invisible"
                         android:src="@drawable/ic_add_photo">
 
                     </ImageView>

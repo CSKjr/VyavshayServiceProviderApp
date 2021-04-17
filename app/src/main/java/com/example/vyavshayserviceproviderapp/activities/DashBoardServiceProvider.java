@@ -3,6 +3,7 @@ package com.example.vyavshayserviceproviderapp.activities;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.media.Image;
@@ -12,10 +13,15 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.vyavshayserviceproviderapp.R;
+import com.example.vyavshayserviceproviderapp.adapters.MyTablyoutsAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class DashBoardServiceProvider extends AppCompatActivity {
 
     private ImageView selectService;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +44,38 @@ public class DashBoardServiceProvider extends AppCompatActivity {
 
         selectService = (ImageView) findViewById(R.id.selectServiceImage);
 
+
+        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
+        viewPager=(ViewPager)findViewById(R.id.viewPager);
+
         selectService.setOnClickListener(clicked);
+
+        tabLoyoutFunctionalities();
+
+    }
+
+    public void tabLoyoutFunctionalities() {
+        final MyTablyoutsAdapter adapter = new MyTablyoutsAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 

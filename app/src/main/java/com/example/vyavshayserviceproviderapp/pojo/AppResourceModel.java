@@ -14,16 +14,17 @@ public class AppResourceModel {
 
 
     public List<AllResource> getMlist() {
-        mlist.add(new AllResource(R.drawable.ic_tractor, "Tractor"));
-        mlist.add(new AllResource(R.drawable.ic_cultivator_icon, "Cultivatior"));
-        mlist.add(new AllResource(R.drawable.ic_land_leveler, "Land Leveler"));
-        mlist.add(new AllResource(R.drawable.ic_mould_board, "Mould Board Plough"));
-        mlist.add(new AllResource(R.drawable.ic_multi_crop, "Multi Crop Power Thresher"));
-        mlist.add(new AllResource(R.drawable.ic_operator, "Operator"));
-        mlist.add(new AllResource(R.drawable.ic_seed_drill, "Seed Drill"));
-        mlist.add(new AllResource(R.drawable.ic_self_propelled, "Self Propelled Reaper"));
-        mlist.add(new AllResource(R.drawable.ic_trailor, "Trailor"));
-        mlist.add(new AllResource(R.drawable.ic_utility_icon, "Disc Harrow"));
+
+        mlist.add(new AllResource(R.drawable.ic_tractor, "Tractor", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_cultivator_icon, "Cultivatior", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_land_leveler, "Land Leveler", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_mould_board, "Mould Board Plough", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_multi_crop, "Multi Crop Power Thresher", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_operator, "Operator", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_seed_drill, "Seed Drill", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_self_propelled, "Self Propelled Reaper", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_trailor, "Trailor", 1, false));
+        mlist.add(new AllResource(R.drawable.ic_utility_icon, "Disc Harrow", 1, false));
 
 
         return mlist;
@@ -32,21 +33,63 @@ public class AppResourceModel {
 
     public class AllResource {
 
-        private Integer integer;
-        private String string;
+        private int a,count;
+        private String vehiclename, date, measurementType, rentalHours, startDate, endDate, startTime, endTime, typeDailyOrHourly;
+        private boolean itemselected;
+        private boolean expanded;
 
-        public AllResource(Integer integer, String string) {
-            this.integer = integer;
-            this.string = string;
+
+        public AllResource(int integer, String string, int count, boolean itemselected) {
+            this.a = integer;
+            this.vehiclename = string;
+            this.count = count;
+            this.itemselected = itemselected;
         }
 
+        public void setA(int a) {
+            this.a = a;
+        }
 
-        public Integer getInteger() {
-            return integer;
+        public int getInteger() {
+            return a;
         }
 
         public String getString() {
-            return string;
+            return vehiclename;
         }
+
+        public int getCount() {
+            return count;
+        }
+
+        public void addCount() {
+            this.count += 1;
+        }
+
+        public void subCount() {
+            if (getCount() == 0) {
+                this.count = 0;
+            } else {
+                this.count -= 1;
+            }
+
+        }
+
+        public void setItemselected(boolean itemselected) {
+            this.itemselected = itemselected;
+        }
+
+        public boolean isItemselected() {
+            return itemselected;
+        }
+
+        public boolean isExpanded() {
+            return expanded;
+        }
+
+        public void setExpanded(boolean expanded) {
+            this.expanded = expanded;
+        }
+
     }
 }

@@ -23,9 +23,15 @@ public class GridViewAddServicesAdapter extends BaseAdapter {
 
     private Context mContext;
 
+    List<AppResourceModel.AllResource> newAllResources;
+
     // Constructor
     public GridViewAddServicesAdapter(Context c) {
         mContext = c;
+    }
+
+    public GridViewAddServicesAdapter(List<AppResourceModel.AllResource> allResources) {
+        newAllResources = allResources;
     }
 
     @Override

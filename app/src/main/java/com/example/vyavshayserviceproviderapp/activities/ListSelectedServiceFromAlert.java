@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.vyavshayserviceproviderapp.R;
 import com.example.vyavshayserviceproviderapp.adapters.RecyclerViewAdapter;
+import com.example.vyavshayserviceproviderapp.adapters.RecyclerViewAdapterTest;
 import com.example.vyavshayserviceproviderapp.pojo.AppResourceModel;
 import com.example.vyavshayserviceproviderapp.pojo.TestPojo;
 
@@ -22,6 +23,8 @@ public class ListSelectedServiceFromAlert extends AppCompatActivity {
 
 
     List<TestPojo> movieList;
+    private AppResourceModel appResourceModel = new AppResourceModel();
+    List<AppResourceModel.AllResource> allResources = appResourceModel.getMlist();
 
 
     @Override
@@ -31,23 +34,23 @@ public class ListSelectedServiceFromAlert extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        initData();
+//        initData();
         initRecyclerView();
     }
 
     private void initRecyclerView() {
-        RecyclerViewAdapter movieAdapter = new RecyclerViewAdapter(movieList);
+        RecyclerViewAdapterTest movieAdapter = new RecyclerViewAdapterTest(allResources);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(movieAdapter);
     }
 
     private void initData() {
-        movieList = new ArrayList<>();
-        movieList.add(new TestPojo("Iron Man", "7.9", "2008", "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil."));
-        movieList.add(new TestPojo("The Incredible Hulk", "6.7", "2008", "Bruce Banner, a scientist on the run from the U.S. Government, must find a cure for the monster he turns into, whenever he loses his temper."));
-        movieList.add(new TestPojo("Iron Man 2", "7.0", "2010", "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy."));
-        movieList.add(new TestPojo("Thor", "7.0", "2011", "The powerful but arrogant god Thor is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders."));
-        movieList.add(new TestPojo("Captain America: The First Avenger", "6.9", "2011", "Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a Super-Soldier serum. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization."));
+        allResources = new ArrayList<>();
+//        allResources.
+//        allResources.add(new TestPojo("The Incredible Hulk", "6.7", "2008", "Bruce Banner, a scientist on the run from the U.S. Government, must find a cure for the monster he turns into, whenever he loses his temper."));
+//        allResources.add(new TestPojo("Iron Man 2", "7.0", "2010", "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy."));
+//        allResources.add(new TestPojo("Thor", "7.0", "2011", "The powerful but arrogant god Thor is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders."));
+//        allResources.add(new TestPojo("Captain America: The First Avenger", "6.9", "2011", "Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a Super-Soldier serum. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization."));
 //        movieList.add(new Movie("The Avengers", "8.0", "2012", "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity."));
 //        movieList.add(new Movie("Iron Man 3","7.2","2013","When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution."));
 //        movieList.add(new Movie("Thor: The Dark World","6.9","2013","When the Dark Elves attempt to plunge the universe into darkness, Thor must embark on a perilous and personal journey that will reunite him with doctor Jane Foster."));
